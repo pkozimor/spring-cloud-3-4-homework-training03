@@ -1,1 +1,1 @@
-POST http://192.168.1.12:35497/actuator/refresh
+POST http://192.168.1.12:35669/actuator/refresh

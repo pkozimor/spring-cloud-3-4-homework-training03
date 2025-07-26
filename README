@@ -1,6 +1,0 @@
-#Tasks
-#Config ma sie odświeżać bez restartu aplikacji
-#Potencjalne rozwiązania:
-AD 1: Actuator (manualnie)
-AD 2: Webhook
-AD 3: Scheduler cyklicznie co 15 sekund (poprzez endpoint actuatora)
