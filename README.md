@@ -1,25 +1,18 @@
-# Zadanie domowe
-- Config ma sie odświeżać bez restartu aplikacji
-#### Potencjalne rozwiązania
-- AD 1: Actuator (manualnie)
-- AD 2: Webhook
-- AD 3: Scheduler cyklicznie co 15 sekund (poprzez endpoint actuatora)
+# Homework - Spring Cloud 3.4 - Training03 - Configuration
+- Config should be refreshed without restarting the application
 
+# Notes
+-  Config Repo -> https://github.com/pkozimor/spring-cloud-3-4-homework-training03-configuration/blob/main/application.properties
 
-# Notatki
--  Repo -> https://github.com/pkozimor/spring-cloud-config-training/blob/main/application.properties
-
-## Serwisy
-### eureka
-- http://localhost:8761/ -> serwisy zarejestrowane w Eurece
+## Services
+### eureka-server
+- http://localhost:8761/ -> services withing eureka-server
 ### config-server
-- http://localhost:8888/config-client/default -> tutaj domyślnie pokazuje wszystkie informacje zawarte w config-serwerze
+- http://localhost:8888/config-client/default -> by default all properties for profile `default` within config-server
 ### ms1
-- http://ip:port/test -> test endpointa
-- http://ip:port/actuator/refresh
+- http://ip:port/test -> test endpoint
+- http://ip:port/actuator/refresh -> refresh config (manually)
 
-
-### Rozwiązanie zadania
-1) Actuator -> puszczam request 
-[refresh-config.http](ms1/refresh-config.http)
-2) Scheduler -> skonfigurowany w klasie RefreshConfig -> odpala się co 15 sekund
+### Solution
+- AD 1: Actuator Endpoint(refresh config manually) -> [refresh-config.http](ms1/refresh-config.http)
+- AD 2: Scheduler defined within RefreshConfig.java updates config each 15 seconds (through actuator endpoint)
